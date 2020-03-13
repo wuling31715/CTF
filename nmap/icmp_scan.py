@@ -1,11 +1,11 @@
 import nmap
 
+ip = '192.168.1.0/24'
 nm = nmap.PortScanner()
-ip = input()
-nm.scan(ip, '1-1000')
-print(nm.all_hosts())
+nm.scan(ip, arguments = '-PE -sn')
 for host in nm.all_hosts():
-    print('-----------------')
+    print('---------------')
     print('host: %s' % host)
     print('hostname: %s' % nm[host].hostname())
     print('state: %s' % nm[host].state())
+
