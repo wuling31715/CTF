@@ -1,6 +1,6 @@
 import nmap
 
-ip = '192.168.1.0/24'
+ip = '192.168.2.0/24'
 port = '80'
 nm = nmap.PortScanner()
 nm.scan(ip, port)
