@@ -2,6 +2,7 @@ from pwn import *
 import struct
 
 # print(cyclic(100))
+# aaaabaaacaaadaaaeaaafaaagaaahaaaiaaajaaakaaalaaamaaanaaaoaaapaaaqaaaraaasaaataaauaaavaaawaaaxaaayaaa
 
 ip = 'ctf.adl.tw'
 port = 11001
