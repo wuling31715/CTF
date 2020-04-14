@@ -9,4 +9,3 @@ int main(){
 	gets(buf);
 	return 0;
 }
-

