@@ -1,7 +1,7 @@
 from pwn import *
 from struct import pack
 
-# print(cyclic(1000))
+print(cyclic(1000))
 
 ip = 'ctf.adl.tw'
 port = 11004
