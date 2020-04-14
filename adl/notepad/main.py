@@ -14,4 +14,3 @@ payload = "aaaabaaacaaadaaaeaaafaaagaaahaaaiaaajaaakaaalaaamaaanaaaoaaapaaaqaaar
 
 r.sendline(payload)
 r.interactive()
-
