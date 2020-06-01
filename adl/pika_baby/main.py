@@ -1,3 +1,4 @@
+# http://140.115.59.7:12002/login.php?user=pikachu&pass=s214587387a
 # view-source:http://140.115.59.7:12002/login.php.back
 
 user = "pikachu"
