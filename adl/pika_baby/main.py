@@ -1,7 +1,10 @@
 # view-source:http://140.115.59.7:12002/login.php.back
 
 user = "pikachu"
-pass = "s214587387a"
+password = "s214587387a"
+
+print("user: {}".format(user))
+print("pass: {}".format(password))
 
 # <?php
 #     $flag = "adlctf{pika_pika_pikachu}";
